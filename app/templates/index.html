@@ -1,0 +1,142 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+* {
+	 box-sizing: border-box;
+}
+
+.column {
+	width: 33.33%;
+	padding: 10px;
+	height: 500px; 
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+  
+}
+input[type=text],input[type=number]{
+	 padding:11px;
+	 width:99%;
+	 box-sizing:border-box;
+		}
+input[type=text]:focus,input[type=number]:focus {
+	 background-color:powderblue;
+}
+		
+input{
+	 padding: 5px 8px;
+	 margin: 4px 0;
+	 display: inline-block;
+	 border: 1px solid #ccc;
+	 border-radius: 3px;
+	 box-sizing: border-box;
+		}
+th{
+	 text-align:center;
+	 padding:8px;
+}
+td{
+	 text-align:left;
+}
+</style>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ee82ee;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ffffff;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+#hr{
+	width:100%;
+	height:10%;
+	background-color:yellow;
+}
+body{
+	background-color:blue;
+}
+h1 {
+    margin:0;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+<div id="hr"> 
+<center><h1>Frappe Test</h1></center>
+</div>
+<ul>
+  <li><a class="active" href="/">Product</a></li>
+  <li><a href="/storage">Storage</a></li>
+  <li><a href="/about">About Us</a></li>
+</ul>
+
+<br><br>
+<div class="row">
+ <center> <div class="column" style="background-color:#aaa;" align="center" ">
+    <h2>Product</h2>
+    <p>Add Product</p>
+	<form method="POST" action="/product">
+		<div class="form-group">
+		<table align="center">
+			<tr>
+				<th>Product_ID</th>
+				<th>:</th>
+				<td> <input type="text" name="pid" pattern="[0-9]{0,3}" title="Only Number are Allowed" required></td>
+			</tr>
+			<tr>
+				<th>Product_Name</th>
+				<th>:</th>
+				<td> <input type="text" name="pname" pattern="[^0-9]{2,8}" title="Only Character are Allowed" required></td>
+			</tr>
+			<tr>
+				<th>Quantity</th>
+				<th>:</th>
+				<td> <input type="number" name="quantity" required></td>
+			</tr>
+			<tr>
+				<th>Price</th>
+				<th>:</th>
+				<td> <input type="text" name="price" pattern="[^A-Za-z]{0,5}" title="Only Number are Allowed" required></td>
+			</tr>
+			<tr>
+				<th>Location</th>
+				<th>:</th>
+				<td> <input type="text" name="location" pattern="[^0-9]{2,8}" title="Only Character are Allowed" required></td>
+			</tr>
+		</table>
+		</div>
+		<input class="btn btn-primary" type="submit" value="Add">
+	</form>
+  </div>
+  </center>
+</div>
+
+</body>
+</html>
